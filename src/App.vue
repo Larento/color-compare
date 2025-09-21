@@ -1,10 +1,34 @@
 <template>
-  <ColorSpaceSquare />
+    <Image @select-color="handle_color_selection" />
+    <div class="color-map">
+        <ColorMap :color_marks="color_marks" />
+    </div>
 </template>
 
 <script setup lang="ts">
-import ColorSpaceSquare from './components/ColorSpaceSquare.vue'
+import * as vue from 'vue'
+import { ColorMap, Image } from './components'
+import { color } from './modules'
+
+const selected_color = vue.ref<color.RGB>()
+const color_marks = vue.computed(() => {
+    if (selected_color.value) {
+        return [color.rgb_to_hsl(selected_color.value)]
+    } else {
+        return undefined
+    }
+})
+
+function handle_color_selection(color: color.RGB) {
+    selected_color.value = color
+}
 </script>
+
+<style lang="css" scoped>
+.color-map {
+    aspect-ratio: 1;
+}
+</style>
 
 <style lang="css">
 :root {
