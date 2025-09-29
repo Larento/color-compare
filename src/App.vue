@@ -3,11 +3,12 @@
     <div class="color-map">
         <ColorMap :color_marks="color_marks" />
     </div>
+    <LanguagePicker />
 </template>
 
 <script setup lang="ts">
 import * as vue from 'vue'
-import { ColorMap, Image } from './components'
+import { ColorMap, Image, LanguagePicker } from './components'
 import { color } from './modules'
 
 const selected_color = vue.ref<color.RGB>()
@@ -91,6 +92,29 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
+select {
+    appearance: none;
+    border-radius: 0.5em;
+    border: 1px solid transparent;
+    padding: 0.6em 1em;
+    font-size: 0.9em;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0.2em 0.8em #2224;
+}
+
+button:hover {
+    border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
 @media (prefers-color-scheme: light) {
     :root {
         color: #213547;
@@ -101,7 +125,8 @@ button:focus-visible {
         color: #747bff;
     }
 
-    button {
+    button,
+    select {
         background-color: #f9f9f9;
     }
 }

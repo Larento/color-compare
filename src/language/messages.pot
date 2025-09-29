@@ -1,3 +1,11 @@
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
+
+#: src/components/LanguagePicker.vue:11
+msgid "Hide language select"
+msgstr ""
+
+#: src/components/LanguagePicker.vue:11
+msgid "Show language select"
+msgstr ""
