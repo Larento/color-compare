@@ -11,8 +11,8 @@ msgstr ""
 
 #: src/components/LanguagePicker.vue:11
 msgid "Hide language select"
-msgstr ""
+msgstr "Hide language select"
 
 #: src/components/LanguagePicker.vue:11
 msgid "Show language select"
-msgstr ""
+msgstr "Show language select"
