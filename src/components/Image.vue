@@ -45,6 +45,5 @@ function handle_click(event: MouseEvent) {
 .root {
     display: block;
     width: 100%;
-    image-rendering: pixelated;
 }
 </style>
