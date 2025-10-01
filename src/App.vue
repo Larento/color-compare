@@ -1,8 +1,6 @@
 <template>
     <Image @select-color="handle_color_selection" />
-    <div class="color-map">
-        <ColorMap :color_marks="color_marks" />
-    </div>
+    <ColorMap :color_marks="color_marks" />
     <LanguagePicker />
 </template>
 
@@ -25,12 +23,6 @@ function handle_color_selection(color: color.RGB) {
 }
 </script>
 
-<style lang="css" scoped>
-.color-map {
-    aspect-ratio: 1;
-}
-</style>
-
 <style lang="css">
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -50,10 +42,20 @@ function handle_color_selection(color: color.RGB) {
 body {
     width: 100%;
     margin: 0 auto;
-    padding: 2rem;
     text-align: center;
     min-width: 320px;
-    min-height: 100vh;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+@media screen and (aspect-ratio > 1.6) {
+    body {
+        grid-template-columns: 8fr 5fr;
+        grid-template-rows: 100%;
+    }
 }
 
 h1 {
