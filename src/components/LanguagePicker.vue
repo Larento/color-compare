@@ -24,7 +24,7 @@ const is_shown = vue.ref(false)
 <style lang="css" scoped>
 .container {
     position: fixed;
-    bottom: 1em;
+    top: 1em;
     left: 1em;
     display: flex;
     place-items: center;
